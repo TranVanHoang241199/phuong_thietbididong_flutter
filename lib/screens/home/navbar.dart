@@ -4,7 +4,6 @@ import 'package:flutter_quan_ly_khach_san/screens/customer/customer_screen.dart'
 import 'package:flutter_quan_ly_khach_san/screens/motorcycle/motorcycle_screen.dart';
 
 import 'home_screen.dart';
-import 'test_screen.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({Key? key}) : super(key: key);
