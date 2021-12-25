@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quan_ly_khach_san/screens/Notification/notification_screen.dart';
+import 'package:flutter_quan_ly_khach_san/screens/customer/customer_screen.dart';
+import 'package:flutter_quan_ly_khach_san/screens/motorcycle/motorcycle_screen.dart';
 
 import 'home_screen.dart';
 import 'test_screen.dart';
@@ -41,14 +43,14 @@ class Navbar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.motorcycle),
             title: Text('Quản lý xe'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => TestScreen())),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MotorcycleScreen())),
           ),
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Khách hàng'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => TestScreen())),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => CustomerScreen())),
           ),
           ListTile(
             leading: Icon(Icons.manage_accounts_rounded),
