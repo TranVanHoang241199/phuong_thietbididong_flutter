@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quan_ly_khach_san/screens/Notification/notification_screen.dart';
+import 'package:flutter_quan_ly_khach_san/screens/accessary/accessary_screen.dart';
+import 'package:flutter_quan_ly_khach_san/screens/account/login_screen.dart';
 import 'package:flutter_quan_ly_khach_san/screens/customer/customer_screen.dart';
 import 'package:flutter_quan_ly_khach_san/screens/motorcycle/motorcycle_screen.dart';
+import 'package:flutter_quan_ly_khach_san/screens/repair/repair_screen.dart';
 
 import 'home_screen.dart';
 
@@ -55,12 +58,13 @@ class Navbar extends StatelessWidget {
             leading: Icon(Icons.manage_accounts_rounded),
             title: Text('Phụ tùng'),
             onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => NotificationScreen())),
+                MaterialPageRoute(builder: (context) => AccessaryScreen())),
           ),
           ListTile(
             leading: Icon(Icons.account_tree_outlined),
             title: Text('Sửa chữa'),
-            onTap: () => null,
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => RepairScreen())),
           ),
           ListTile(
             leading: Icon(Icons.notifications),
@@ -99,7 +103,9 @@ class Navbar extends StatelessWidget {
           ListTile(
             title: Text('Thoát'),
             leading: Icon(Icons.exit_to_app),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => LoginScreen()),
+                (Route<dynamic> route) => false),
           ),
         ],
       ),
