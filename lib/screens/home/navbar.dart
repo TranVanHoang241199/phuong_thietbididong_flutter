@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quan_ly_khach_san/screens/Notification/notification_screen.dart';
 
 import 'home_screen.dart';
+import 'test_screen.dart';
 
 class Navbar extends StatelessWidget {
   const Navbar({Key? key}) : super(key: key);
@@ -34,23 +36,25 @@ class Navbar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Trang chủ'),
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomeScreen())),
+            onTap: () => Navigator.of(context).pop(HomeScreen()),
           ),
           ListTile(
             leading: Icon(Icons.motorcycle),
             title: Text('Quản lý xe'),
-            onTap: () => null,
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => TestScreen())),
           ),
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Khách hàng'),
-            onTap: () => null,
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => TestScreen())),
           ),
           ListTile(
             leading: Icon(Icons.manage_accounts_rounded),
             title: Text('Phụ tùng'),
-            onTap: () => null,
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NotificationScreen())),
           ),
           ListTile(
             leading: Icon(Icons.account_tree_outlined),
@@ -60,7 +64,8 @@ class Navbar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.notifications),
             title: Text('Thông Báo'),
-            onTap: () => null,
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NotificationScreen())),
             trailing: ClipOval(
               child: Container(
                 color: Colors.red,
